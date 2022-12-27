@@ -484,7 +484,7 @@ bar {
 	position top
 	tray_output primary
 	status_command bumblebee-status -m nic cpu \
-		memory date time pasink pasource battery \
+		memory pasink pasource date time battery \
 		-p root.path=/ time.format="%l:%M %p" date.format="%a %d/%m" \
 		-t iceberg-rainbow
 	# status_command bumblebee-status -m nic disk:root cpu \
