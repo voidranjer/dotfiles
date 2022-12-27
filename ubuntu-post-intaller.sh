@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Add PPAs
-sudo add-apt-repository ppa:regolith-linux/release # i3-gaps
-sudo add-apt-repository ppa:aslatter/ppa # alacritty
+yes "" | sudo add-apt-repository ppa:regolith-linux/release # i3-gaps
+yes "" | sudo add-apt-repository ppa:aslatter/ppa # alacritty
 
 # Updates
 sudo apt -y update && sudo apt -y upgrade
