@@ -30,6 +30,10 @@ sudo chmod +x ~/.local/bin/pfetch
 sudo apt -y install gufw
 echo "y" | sudo ufw enable
 
+# Install bumblebee-status (for i3 bar)
+sudo apt -y install fonts-font-awesome fonts-powerline
+pip install --user bumblebee-status
+
 # Wallpaper Setup
 nitrogen --save ~/Pictures/Wallpapers/wallpaper.png
 
