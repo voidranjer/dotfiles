@@ -21,7 +21,7 @@ sudo add-apt-repository -y ppa:regolith-linux/release > /dev/null # i3-gaps
 sudo add-apt-repository -y ppa:aslatter/ppa > /dev/null # alacritty
 
 # Updates
-echo "Running apt-get 'update', 'upgrade', and 'autoremove'"
+echo "Running apt-get 'update', 'upgrade', and 'autoremove'..."
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 sudo apt-get -qq autoremove
@@ -59,7 +59,7 @@ echo "y" | sudo ufw enable
 
 # Wallpaper Setup
 echo "Setting up wallpaper for the first time"
-> /dev/null
+sudo curl -o $BG_PATH/wallpaper.png -L "https://gitlab.com/ravenjs/dotfiles/-/blob/main/Pictures/Wallpapers/wallpaper.png" > /dev/null
 nitrogen --set-zoom-fill $BG_PATH/wallpaper.png
 
 echo "Completed!"
