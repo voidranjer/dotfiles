@@ -4,7 +4,7 @@
 
 ### 1. Install `git` (if it doesn't already exist):
 ```bash
-sudo apt install git
+sudo apt -y install git
 ```
 
 ### 2. Ensure the source repository ignores any existing folders with the same name to avoid weird recursion problems before cloning:
