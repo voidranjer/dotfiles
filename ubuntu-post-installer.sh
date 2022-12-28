@@ -6,6 +6,9 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Create ~/.local/bin directory if it doesn't already exist
+mkdir -p ~/.local/bin
+
 
 # Add PPAs
 echo "Adding additional PPAs..."
