@@ -28,11 +28,8 @@ sudo apt-get -qq autoremove
 
 echo "Installing packages..."
 
-# Install packages (required by ~/.config/i3/config)
-sudo apt-get -qq install htop rofi fish ranger nitrogen picom redshift-gtk volumeicon-alsa arandr i3-gaps
-
-# Install other useful packages
-sudo apt-get -qq install firefox chromium-browser thunar gedit alacritty lxappearance
+# Install packages 
+# xargs -a packages.txt sudo apt-get -qq install
 
 # Install i3 autotiling (.local/bin/autotiling)
 sudo apt-get -qq install python3-i3ipc

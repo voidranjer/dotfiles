@@ -1,0 +1,17 @@
+fish
+rofi
+nitrogen
+picom
+arandr
+i3-gaps
+
+lxappearance
+redshift-gtk
+
+alacritty
+firefox
+chromium-browser
+thunar
+gedit
+htop
+ranger
