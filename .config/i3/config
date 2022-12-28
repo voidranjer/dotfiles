@@ -1,3 +1,4 @@
+
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -35,6 +36,7 @@
 set $mod Mod4
 set $TERMINAL alacritty
 set $BROWSER firefox
+set $BROWSER2 chromium
 set $FILEMANAGER thunar
 set $EDITOR gedit
 set $SCREENSHOOTER xfce4-screenshooter
@@ -67,7 +69,8 @@ bindsym $mod+x exec $TERMINAL -e htop
 bindsym $mod+Shift+Return exec $TERMINAL
 bindsym $mod+Return exec $TERMINAL -e fish
 bindsym $mod+w exec $BROWSER
-bindsym $mod+Shift+w exec $BROWSER -private-window # Only works with Firefox
+bindsym $mod+Shift+w exec $BROWSER2
+# bindsym $mod+Shift+w exec $BROWSER -private-window # Only works with Firefox
 bindsym $mod+f exec $FILEMANAGER
 bindsym $mod+Shift+f exec $TERMINAL -e ranger
 bindsym $mod+e exec $EDITOR
