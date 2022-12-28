@@ -49,7 +49,8 @@ sudo chmod +x $BIN_PATH/pfetch
 
 # Install bumblebee-status (for i3 bar)
 sudo apt-get -qq install fonts-font-awesome fonts-powerline python3-pip
-pip3 install --user --quiet bumblebee-status
+sudo pip3 install --quiet bumblebee-status
+# sudo pip3 install --quiet -t /usr/bin bumblebee-status
 
 # Enable Firewall
 echo "Enabling Firewall"
