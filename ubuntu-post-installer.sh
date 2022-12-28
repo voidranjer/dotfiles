@@ -59,7 +59,7 @@ echo "y" | sudo ufw enable
 
 # Wallpaper Setup
 echo "Setting up wallpaper for the first time"
-sudo curl -s -o $BG_PATH/wallpaper.png -L "https://gitlab.com/ravenjs/dotfiles/-/blob/main/Pictures/Wallpapers/wallpaper.png" > /dev/null
+sudo curl -s -o $BG_PATH/wallpaper.png -L "https://gitlab.com/ravenjs/dotfiles/-/blob/main/Pictures/Wallpapers/wallpaper.png"
 nitrogen --set-zoom-fill $BG_PATH/wallpaper.png
 
 echo "Completed!"
