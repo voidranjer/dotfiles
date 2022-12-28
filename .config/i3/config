@@ -588,5 +588,5 @@ mode "$mode_gaps_outer" {
 
 
 # Patch i3status-on-bar (i3status-on-bar needs to restart with an active window. Spawn a window, restart, then kill the window.)
-exec --no-startup-id $TERMINAL; i3-msg restart; sleep 1; i3-msg kill
+# exec --no-startup-id $TERMINAL; i3-msg restart; sleep 1; i3-msg kill
 
