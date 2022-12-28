@@ -24,7 +24,7 @@ echo "Installing packages..."
 sudo apt-get -qq install htop rofi fish ranger nitrogen picom redshift-gtk volumeicon-alsa arandr i3-gaps
 
 # Install other useful packages
-sudo apt-get -qq install firefox thunar gedit alacritty
+sudo apt-get -qq install firefox chromium-browser thunar gedit alacritty
 
 # Install i3 autotiling (.local/bin/autotiling)
 sudo apt-get -qq install python3-i3ipc
