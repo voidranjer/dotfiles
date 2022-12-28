@@ -50,6 +50,6 @@ echo "y" | sudo ufw enable
 
 # Wallpaper Setup
 echo "Setting up wallpaper for the first time"
-nitrogen --save ~/Pictures/Wallpapers/wallpaper.png
+nitrogen --set-zoom-fill ~/Pictures/Wallpapers/wallpaper.png
 
 echo "Completed!"
