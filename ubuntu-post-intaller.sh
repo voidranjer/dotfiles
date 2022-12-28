@@ -13,7 +13,7 @@ sudo add-apt-repository -y ppa:regolith-linux/release > /dev/null # i3-gaps
 sudo add-apt-repository -y ppa:aslatter/ppa > /dev/null # alacritty
 
 # Updates
-echo "Running 'apt-get update, upgrade, and autoremove'"
+echo "Running apt-get 'update', 'upgrade', and 'autoremove'"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 sudo apt-get -qq autoremove
