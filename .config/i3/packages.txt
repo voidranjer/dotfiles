@@ -4,6 +4,7 @@ nitrogen
 picom
 arandr
 i3-gaps
+gnome-screenshot
 
 lxappearance
 redshift-gtk

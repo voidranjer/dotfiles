@@ -39,7 +39,6 @@ set $BROWSER firefox
 set $BROWSER2 chromium
 set $FILEMANAGER thunar
 set $EDITOR gedit
-set $SCREENSHOOTER xfce4-screenshooter
 set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
 set $DISPLAY ~/.screenlayout/layout.sh
@@ -74,7 +73,8 @@ bindsym $mod+Shift+w exec $BROWSER2
 bindsym $mod+f exec $FILEMANAGER
 bindsym $mod+Shift+f exec $TERMINAL -e ranger
 bindsym $mod+e exec $EDITOR
-bindsym Print exec $SCREENSHOOTER
+bindsym Print exec gnome-screenshot
+bindsym Shift+Print exec gnome-screenshot -i
 # bindsym $mod+Shift+d --release exec killall dunst; exec notify-send 'restart dunst'
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+d exec "rofi -show drun -modi drun,find:~/.local/share/rofi/finder.sh,window,run,ssh -show-icons -sidebar-mode"
