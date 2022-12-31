@@ -1,4 +1,3 @@
-
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -91,6 +90,10 @@ bindsym $mod+F10 exec $EDITOR ~/.config/i3/config
 ################################################################################################
 ## Gnome Policy Kit (For controlled authentication)
 exec --no-startup-id $POLKIT
+
+# iBus Daemon autostart [https://wiki.archlinux.org/title/IBus]
+# Execute 'ibus-setup' to configure iBus with a graphical interface
+exec --no-startup-id ibus-daemon -drxR
 
 ## Restore the wallpaper with nitrogen and start the compositor for window effects like transparency and fading
 # exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b -C
