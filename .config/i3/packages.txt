@@ -5,6 +5,7 @@ picom
 arandr
 i3-gaps
 gnome-screenshot
+ibus
 
 lxappearance
 redshift-gtk
