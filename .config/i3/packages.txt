@@ -13,7 +13,7 @@ redshift-gtk
 alacritty
 firefox
 chromium-browser
-thunar
-gedit
+pcmanfm
+featherpad
 htop
 ranger

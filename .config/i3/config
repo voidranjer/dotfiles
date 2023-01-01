@@ -37,7 +37,7 @@ set $TERMINAL alacritty
 set $BROWSER firefox
 set $BROWSER2 chromium
 set $FILEMANAGER thunar
-set $EDITOR gedit
+set $EDITOR featherpad
 set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
 set $DISPLAY ~/.screenlayout/layout.sh
