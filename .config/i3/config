@@ -113,7 +113,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
 
 ## Launch PCManFM daemon as volume manager
-# exec --no-startup-id pcmanfm -d
+exec --no-startup-id pcmanfm -d
 
 ## Auto-activate numlock on login
 # exec_always --no-startup-id numlockx
