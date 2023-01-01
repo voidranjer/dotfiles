@@ -11,3 +11,4 @@ image/jpeg=org.gnome.eog.desktop
 image/x-png=org.gnome.eog.desktop
 image/png=org.gnome.eog.desktop
 image/gif=org.gnome.eog.desktop
+text/plain=featherpad.desktop
