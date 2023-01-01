@@ -60,4 +60,7 @@ echo "Setting up wallpaper for the first time"
 sudo curl -s -o $BG_PATH/wallpaper.png -L $WALLPAPER
 nitrogen --set-zoom-fill $BG_PATH/wallpaper.png
 
+# Setting default applications (handled by ~/.config/mimeapps.list)
+# xdg-settings set default-web-browser firefox.desktop
+
 echo "Completed!"

@@ -31,3 +31,7 @@ dotfiles config --local status.showUntrackedFiles no
 sudo chmod +x ~/ubuntu-post-installer.sh
 sudo bash ~/ubuntu-post-installer.sh
 ```
+
+## TODO
+- Include a table in the markdown files explaining the function of each script/directory/file and package in the packages.txt file
+- In the table, include all locations in which the packages are dependencies (mimeapps.list -> firefox, eog) (everything else -> i3/config)

@@ -4,16 +4,21 @@ nitrogen
 picom
 arandr
 i3-gaps
+redshift-gtk
 gnome-screenshot
+
 ibus
+xdg-utils
 
 lxappearance
-redshift-gtk
+alacarte
 
 alacritty
 firefox
 chromium-browser
 pcmanfm
 featherpad
+eog
+
 htop
 ranger

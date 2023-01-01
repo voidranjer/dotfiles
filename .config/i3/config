@@ -36,7 +36,7 @@ set $mod Mod4
 set $TERMINAL alacritty
 set $BROWSER firefox
 set $BROWSER2 chromium
-set $FILEMANAGER pcmanfm
+set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 set $EDITOR featherpad
 set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
@@ -63,6 +63,7 @@ font xft:Open Sans Semi-Bold 11
 # bindsym $mod+Ctrl+b exec $TERMINAL -e 'bmenu'
 # bindsym $mod+Shift+f exec pcmanfm_pkexec
 # bindsym $mod+F5 exec $TERMINAL -e 'mocp'
+# bindsym $mod+Shift+D alacarte
 bindsym $mod+x exec $TERMINAL -e htop
 bindsym $mod+Shift+Return exec $TERMINAL
 bindsym $mod+Return exec $TERMINAL -e fish
