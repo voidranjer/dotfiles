@@ -30,7 +30,7 @@ sudo apt-get -qq autoremove
 echo "Installing packages..."
 
 # Install packages 
-sudo apt-get -qq install $(curl -s $PACKAGES | tr "\n" " ")
+sudo apt-get -qq install $(curl -s $PACKAGES | grep -o '^[^#]*')
 
 # Install i3 autotiling (.local/bin/autotiling)
 sudo apt-get -qq install python3-i3ipc

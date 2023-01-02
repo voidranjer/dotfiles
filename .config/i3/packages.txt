@@ -1,4 +1,4 @@
-# i3wm / DE
+# ----- i3wm / DE -----
 fish
 rofi
 nitrogen
@@ -8,12 +8,8 @@ i3-gaps
 redshift-gtk
 gnome-screenshot
 
-ibus
-xdg-utils
 
-lxappearance
-alacarte
-
+# ----- user apps -----
 alacritty
 firefox
 chromium-browser
@@ -22,5 +18,17 @@ featherpad
 eog
 vlc
 
+
+# ----- cli apps -----
 htop
 ranger
+
+
+# ----- cli utils -----
+ibus
+xdg-utils
+
+
+# ----- config utils -----
+lxappearance
+alacarte
