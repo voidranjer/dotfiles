@@ -50,4 +50,4 @@ sudo bash ~/ubuntu-post-installer.sh
 
 ## Additional Packages (managed by distribution/DE)
 - `zorin-exec-guard` Executable files handler and `.deb` installers
-- 
+- Notifications
