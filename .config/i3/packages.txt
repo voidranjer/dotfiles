@@ -19,6 +19,7 @@ chromium-browser
 pcmanfm
 featherpad
 eog
+vlc
 
 htop
 ranger
