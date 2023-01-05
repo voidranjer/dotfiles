@@ -365,7 +365,7 @@ bindsym $mod+q split toggle
 
 # change container layout (fullscreen toggle global: Span all available outputs)
 bindsym $mod+o layout stacking
-bindsym $mod+u layout tabbedt
+bindsym $mod+u layout tabbed
 bindsym $mod+i layout toggle split
 bindsym $mod+F11 fullscreen toggle
 bindsym $mod+Shift+F11 fullscreen toggle global
