@@ -2,9 +2,10 @@
 pfetch
 
 # Aliases
-alias dotfiles='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias dfs='dotfiles status'
-alias dfa='dotfiles add'
-alias dfc='dotfiles commit'
-alias dfp='dotfiles push'
-alias dfpl='dotfiles pull'
+alias dotf='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dfs='dotf status'
+alias dfa='dotf add'
+alias dfc='dotf commit'
+alias dfp='dotf push'
+alias dfpl='dotf pull'
+alias dfd='dotf diff'

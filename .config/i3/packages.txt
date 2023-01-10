@@ -7,6 +7,7 @@ arandr
 i3-gaps
 redshift-gtk
 gnome-screenshot
+ibus
 
 
 # ----- user apps -----
@@ -17,16 +18,8 @@ pcmanfm
 featherpad
 eog
 vlc
-
-
-# ----- cli apps -----
 htop
 ranger
-
-
-# ----- cli utils -----
-ibus
-xdg-utils
 
 
 # ----- config utils -----
