@@ -1,5 +1,7 @@
-# System Information
-pfetch
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    pfetch
+end
 
 # Aliases
 alias dotf='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
