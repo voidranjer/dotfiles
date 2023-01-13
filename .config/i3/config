@@ -42,6 +42,7 @@ set $DISPLAY ~/.screenlayout/layout.sh
 set $SCREENSHOT spectacle
 set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
 set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+set $FILEMANAGER dolphin
 # set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
@@ -105,7 +106,7 @@ exec_always --no-startup-id nitrogen --set-zoom-fill $WALLPAPER; sleep 1; picom 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # exec --no-startup-id pamac-tray
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-power-manager
 
 ## Manjaro Implemented
 # exec_always --no-startup-id ff-theme-util

@@ -8,6 +8,9 @@ i3-gaps
 redshift-gtk
 # gnome-screenshot
 # ibus
+# nm-applet
+# blueman-applet
+# xfce4-power-manager
 
 
 # ----- user apps -----
