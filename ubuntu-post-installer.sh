@@ -38,8 +38,8 @@ sudo curl -s -o $BIN_PATH/autotiling -L "https://raw.githubusercontent.com/nwg-p
 sudo chmod +x $BIN_PATH/autotiling
 
 # Install i3status-title-on-bar
-sudo curl -s -o $BIN_PATH/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
-sudo chmod +x $BIN_PATH/i3status-title-on-bar
+# sudo curl -s -o $BIN_PATH/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
+# sudo chmod +x $BIN_PATH/i3status-title-on-bar
 
 # Install pfetch (used by ~/.config/fish/config.fish)
 sudo curl -s -o $BIN_PATH/pfetch -L "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
