@@ -11,6 +11,7 @@ redshift-gtk
 # nm-applet
 # blueman-applet
 # xfce4-power-manager
+# gnome-keyring (for vscode GitHub login)
 
 
 # ----- user apps -----
