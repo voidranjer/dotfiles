@@ -28,4 +28,5 @@ firefox
 
 # ----- config utils -----
 lxappearance
+kvantum
 # alacarte

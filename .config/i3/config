@@ -212,7 +212,7 @@ mode "resize" {
 # FOCUS & NAVIGATION
 ################################################################################################
 # Focus window on hover
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # change focus
 bindsym $mod+h focus left
