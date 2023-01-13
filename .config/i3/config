@@ -40,9 +40,9 @@ set $EDITOR kwrite
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
 set $DISPLAY ~/.screenlayout/layout.sh
 set $SCREENSHOT spectacle
-set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
-set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 set $FILEMANAGER dolphin
+set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
+# set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
