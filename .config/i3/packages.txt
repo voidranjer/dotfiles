@@ -6,22 +6,22 @@ picom
 arandr
 i3-gaps
 redshift-gtk
-gnome-screenshot
-ibus
+# gnome-screenshot
+# ibus
 
 
 # ----- user apps -----
 alacritty
 firefox
-chromium-browser
-pcmanfm
-featherpad
-eog
-vlc
-htop
-ranger
+# chromium-browser
+# pcmanfm
+# featherpad
+# eog
+# vlc
+# htop
+# ranger
 
 
 # ----- config utils -----
 lxappearance
-alacarte
+# alacarte

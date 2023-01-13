@@ -36,11 +36,13 @@ set $mod Mod4
 set $TERMINAL alacritty
 set $BROWSER firefox
 set $BROWSER2 chromium
-set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
-set $EDITOR featherpad
-set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+set $EDITOR kwrite
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
 set $DISPLAY ~/.screenlayout/layout.sh
+set $SCREENSHOT spectacle
+set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
+set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
 ################################################################################################
@@ -73,8 +75,7 @@ bindsym $mod+Shift+w exec $BROWSER2
 bindsym $mod+f exec $FILEMANAGER
 bindsym $mod+Shift+f exec $TERMINAL -e ranger
 bindsym $mod+e exec $EDITOR
-bindsym Print exec gnome-screenshot
-bindsym Shift+Print exec gnome-screenshot -i
+bindsym Print exec $SCREENSHOT
 # bindsym $mod+Shift+d --release exec killall dunst; exec notify-send 'restart dunst'
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+d exec "rofi -show drun -modi drun,find:~/.local/share/rofi/finder.sh,window,run,ssh -show-icons -sidebar-mode"
@@ -114,7 +115,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
 
 ## Launch PCManFM daemon as volume manager
-exec --no-startup-id pcmanfm -d
+# exec --no-startup-id pcmanfm -d
 
 ## Auto-activate numlock on login
 # exec_always --no-startup-id numlockx
