@@ -20,6 +20,7 @@ sudo mkdir -p $BG_PATH
 echo "Adding additional PPAs..."
 sudo add-apt-repository -y ppa:regolith-linux/release > /dev/null # i3-gaps
 sudo add-apt-repository -y ppa:aslatter/ppa > /dev/null # alacritty
+sudo add-apt-repository ppa:afelinczak/ppa > /dev/null # clipit
 
 # Updates
 echo "Running apt-get 'update', 'upgrade', and 'autoremove'..."
@@ -49,6 +50,9 @@ sudo chmod +x $BIN_PATH/pfetch
 sudo apt-get -qq install fonts-font-awesome fonts-powerline python3-pip
 sudo pip3 install --quiet bumblebee-status
 # sudo pip3 install --quiet -t /usr/bin bumblebee-status
+
+# Install clipit (clipboard manager)
+sudo apt-get -qq install clipit
 
 # Enable Firewall
 echo "Enabling Firewall"
