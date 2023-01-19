@@ -104,7 +104,7 @@ exec --no-startup-id ibus-daemon -drxR
 exec_always --no-startup-id nitrogen --set-zoom-fill $WALLPAPER; sleep 1; picom -b -C
 
 ## Clipboard Manager
-exec --no-startup-id clipit
+exec --no-startup-id clipit -dn
 
 ## System Tray Applets
 exec --no-startup-id nm-applet
