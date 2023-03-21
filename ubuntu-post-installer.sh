@@ -20,6 +20,7 @@ sudo mkdir -p $BG_PATH
 echo "Adding additional PPAs..."
 sudo add-apt-repository -y ppa:regolith-linux/release > /dev/null # i3-gaps
 sudo add-apt-repository -y ppa:aslatter/ppa > /dev/null # alacritty
+sudo add-apt-repository ppa:afelinczak/ppa > /dev/null # clipit
 
 # Updates
 echo "Running apt-get 'update', 'upgrade', and 'autoremove'..."
@@ -38,8 +39,8 @@ sudo curl -s -o $BIN_PATH/autotiling -L "https://raw.githubusercontent.com/nwg-p
 sudo chmod +x $BIN_PATH/autotiling
 
 # Install i3status-title-on-bar
-sudo curl -s -o $BIN_PATH/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
-sudo chmod +x $BIN_PATH/i3status-title-on-bar
+# sudo curl -s -o $BIN_PATH/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
+# sudo chmod +x $BIN_PATH/i3status-title-on-bar
 
 # Install pfetch (used by ~/.config/fish/config.fish)
 sudo curl -s -o $BIN_PATH/pfetch -L "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
@@ -49,6 +50,9 @@ sudo chmod +x $BIN_PATH/pfetch
 sudo apt-get -qq install fonts-font-awesome fonts-powerline python3-pip
 sudo pip3 install --quiet bumblebee-status
 # sudo pip3 install --quiet -t /usr/bin bumblebee-status
+
+# Install clipit (clipboard manager)
+sudo apt-get -qq install clipit
 
 # Enable Firewall
 echo "Enabling Firewall"

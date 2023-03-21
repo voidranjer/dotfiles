@@ -21,9 +21,9 @@ git clone --bare https://gitlab.com/ravenjs/dotfiles.git $HOME/dotfiles
 ### 4. Checkout the actual content from the bare repository to your $HOME:
 > Note: This alias is the same alias found in `~/.config/fish/config.fish`
 ```bash
-alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-dotfiles checkout
-dotfiles config --local status.showUntrackedFiles no
+alias dotf='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+dotf checkout
+dotf config --local status.showUntrackedFiles no
 ```
 
 ### 5. Make the `ubuntu-post-installer.sh` script executable and run it with root:

@@ -6,22 +6,27 @@ picom
 arandr
 i3-gaps
 redshift-gtk
-gnome-screenshot
-ibus
+# gnome-screenshot
+# ibus
+# nm-applet
+# blueman-applet
+# xfce4-power-manager
+# gnome-keyring (for vscode GitHub login)
 
 
 # ----- user apps -----
 alacritty
 firefox
-chromium-browser
-pcmanfm
-featherpad
-eog
-vlc
-htop
-ranger
+# chromium-browser
+# pcmanfm
+# featherpad
+# eog
+# vlc
+# htop
+# ranger
 
 
 # ----- config utils -----
 lxappearance
-alacarte
+kvantum
+# alacarte

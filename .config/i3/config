@@ -36,11 +36,15 @@ set $mod Mod4
 set $TERMINAL alacritty
 set $BROWSER firefox
 set $BROWSER2 chromium
-set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 set $EDITOR featherpad
-set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+bindsym $mod+Shift+e exec code
 set $WALLPAPER ~/Pictures/Wallpapers/wallpaper.png
 set $DISPLAY ~/.screenlayout/layout.sh
+set $SCREENSHOT gnome-screenshot
+set $FILEMANAGER thunar
+# set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
+set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
 ################################################################################################
@@ -73,8 +77,7 @@ bindsym $mod+Shift+w exec $BROWSER2
 bindsym $mod+f exec $FILEMANAGER
 bindsym $mod+Shift+f exec $TERMINAL -e ranger
 bindsym $mod+e exec $EDITOR
-bindsym Print exec gnome-screenshot
-bindsym Shift+Print exec gnome-screenshot -i
+bindsym Print exec $SCREENSHOT -i
 # bindsym $mod+Shift+d --release exec killall dunst; exec notify-send 'restart dunst'
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+d exec "rofi -show drun -modi drun,find:~/.local/share/rofi/finder.sh,window,run,ssh -show-icons -sidebar-mode"
@@ -100,21 +103,21 @@ exec --no-startup-id ibus-daemon -drxR
 # exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b -C
 exec_always --no-startup-id nitrogen --set-zoom-fill $WALLPAPER; sleep 1; picom -b -C
 
+## Clipboard Manager
+exec --no-startup-id clipit -dn
+
 ## System Tray Applets
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # exec --no-startup-id pamac-tray
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-power-manager
 
 ## Manjaro Implemented
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
 
-## Autostart User Applications
-exec --no-startup-id redshift-gtk
-
 ## Launch PCManFM daemon as volume manager
-exec --no-startup-id pcmanfm -d
+# exec --no-startup-id pcmanfm -d
 
 ## Auto-activate numlock on login
 # exec_always --no-startup-id numlockx
@@ -122,11 +125,13 @@ exec --no-startup-id pcmanfm -d
 ## Autotiling for i3wm
 exec_always --no-startup-id autotiling
 
+## Autostart User Applications
+exec --no-startup-id redshift-gtk
+
 ## Disabled
 # exec --no-startup-id barrier
 # exec --no-startup-id xautolock -time 10 -locker blurlock # Using XFCE's Power Manager (and automatic screensaver)
 # exec --no-startup-id manjaro-hello
-# exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
@@ -209,7 +214,7 @@ mode "resize" {
 # FOCUS & NAVIGATION
 ################################################################################################
 # Focus window on hover
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # change focus
 bindsym $mod+h focus left
@@ -412,7 +417,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+9 exit
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -421,9 +426,9 @@ mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock, mode "default"
 #     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
