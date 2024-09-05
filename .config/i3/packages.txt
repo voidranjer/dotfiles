@@ -4,8 +4,9 @@ rofi
 nitrogen
 picom
 arandr
-i3-gaps
 redshift-gtk
+pavucontrol
+# i3-gaps
 # gnome-screenshot
 # ibus
 # nm-applet
@@ -15,8 +16,8 @@ redshift-gtk
 
 
 # ----- user apps -----
-alacritty
 firefox
+# alacritty
 # chromium-browser
 # pcmanfm
 # featherpad
