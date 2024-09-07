@@ -1,0 +1,11 @@
+################################################################################################
+# NETWORK CONFIGURATIONS
+################################################################################################
+
+# CLI: https://www.makeuseof.com/connect-to-wifi-with-nmcli/
+# CLI (ncurses): https://www.howtogeek.com/devops/how-to-manage-linux-wi-fi-networks-with-nmtui/
+
+# `nmcli dev wifi list`
+# `sudo nmcli --ask dev wifi connect network-ssid`
+
+# bindsym $mod+F2 exec nmtui

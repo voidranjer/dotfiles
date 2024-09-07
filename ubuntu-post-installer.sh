@@ -9,18 +9,12 @@ fi
 # Variables
 BIN_PATH="/usr/local/bin"
 BG_PATH="/usr/local/share/backgrounds"
-PACKAGES="https://gitlab.com/ravenjs/dotfiles/-/raw/main/.config/i3/packages.txt"
-WALLPAPER="https://gitlab.com/ravenjs/dotfiles/-/blob/main/Pictures/Wallpapers/wallpaper.png"
+PACKAGES="https://github.com/voidranjer/dotfiles/-/raw/main/.config/i3/packages.txt"
+WALLPAPER="https://github.com/voidranjer/dotfiles/-/blob/main/Pictures/Wallpapers/wallpaper.png"
 
-# Create directories if they doesn't already exist 
+# Create directories if they don't already exist 
 sudo mkdir -p $BIN_PATH
 sudo mkdir -p $BG_PATH
-
-# Add PPAs (possibly move to ~/.config/i3/ppa.txt in the future)
-echo "Adding additional PPAs..."
-sudo add-apt-repository -y ppa:regolith-linux/release > /dev/null # i3-gaps
-sudo add-apt-repository -y ppa:aslatter/ppa > /dev/null # alacritty
-sudo add-apt-repository ppa:afelinczak/ppa > /dev/null # clipit
 
 # Updates
 echo "Running apt-get 'update', 'upgrade', and 'autoremove'..."

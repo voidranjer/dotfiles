@@ -5,8 +5,7 @@ nitrogen
 picom
 arandr
 redshift-gtk
-pavucontrol
-# i3-gaps
+# pavucontrol
 # gnome-screenshot
 # ibus
 # nm-applet
@@ -16,8 +15,8 @@ pavucontrol
 
 
 # ----- user apps -----
-firefox
-alacritty
+# firefox
+# alacritty
 # chromium-browser
 # pcmanfm
 # featherpad
@@ -28,6 +27,6 @@ alacritty
 
 
 # ----- config utils -----
-lxappearance
-kvantum
+# lxappearance
+# kvantum
 # alacarte

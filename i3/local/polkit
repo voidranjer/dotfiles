@@ -1,0 +1,9 @@
+################################################################################################
+# POLICY KIT CONFIGURATIONS
+################################################################################################
+# Policy Kit (For controlled authentication)
+
+# set $POLKIT /usr/lib/polkit-kde-authentication-agent-1
+# set $POLKIT /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# exec --no-startup-id $POLKIT
