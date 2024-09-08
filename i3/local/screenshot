@@ -1,0 +1,6 @@
+################################################################################################
+# DISPLAY CONFIGURATIONS
+################################################################################################
+
+# For Wayland (requires grim, slurp, and wl-clipboard to be installed)
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
