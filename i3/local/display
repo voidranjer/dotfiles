@@ -5,6 +5,9 @@
 
 set $DISPLAY_SCRIPT ~/.screenlayout/layout.sh
 
+bindsym --locked XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%- 
+
 # exec_always --no-startup-id $DISPLAY
 
 # Screen brightness controls (Unnecessary when using xfce4-power-manager)
