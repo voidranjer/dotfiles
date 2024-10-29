@@ -1,0 +1,12 @@
+[
+  {
+    "name": "arandr",
+    "link": "https://github.com/haad/arandr",
+    "provides": [
+      {
+        "cmd": "arandr",
+        "description": "Start ARandR GUI"
+      }
+    ]
+  }
+]

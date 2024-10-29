@@ -1,7 +1,3 @@
-################################################################################################
-# i3bar
-################################################################################################
-
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	font pango:Inconsolata 10

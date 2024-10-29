@@ -1,0 +1,12 @@
+[
+  {
+    "name": "greenclip",
+    "link": "https://github.com/erebe/greenclip",
+    "provides": [
+      {
+        "cmd": "greenclip daemon",
+        "description": "Start greenclip in daemon mode"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+# bindsym $mod+F2 exec nmtui

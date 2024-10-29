@@ -1,6 +1,3 @@
-################################################################################################
-# DISPLAY CONFIGURATIONS
-################################################################################################
 # Monitor Setup (xrandr + arandr OR wdisplay (Wayland) to set layouts and Primary Monitor)
 
 set $DISPLAY_SCRIPT ~/.screenlayout/layout.sh

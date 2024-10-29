@@ -1,6 +1,3 @@
-################################################################################################
-# WORKSPACE NAMES
-################################################################################################
 # Workspace display names
 
 # to display names or symbols instead of plain workspace numbers you can use

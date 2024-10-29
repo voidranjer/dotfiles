@@ -1,0 +1,32 @@
+[
+  {
+    "name": "bumblebee-status",
+    "link": "https://github.com/tobi-wan-kenobi/bumblebee-status",
+    "provides": [
+      {
+        "cmd": "bumblebee-status",
+        "description": "Status command for i3wm"
+      }
+    ]
+  },
+  {
+    "name": "picom",
+    "link": "https://github.com/yshui/picom",
+    "provides": [
+      {
+        "cmd": "picom",
+        "description": "A lightweight compositor for X11"
+      }
+    ]
+  },
+  {
+    "name": "rofi",
+    "link": "https://github.com/davatorium/rofi",
+    "provides": [
+      {
+        "cmd": "rofi",
+        "description": "A window switcher, application launcher and dmenu replacement"
+      }
+    ]
+  }
+]

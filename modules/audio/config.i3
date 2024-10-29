@@ -1,7 +1,3 @@
-################################################################################################
-## SOUND CONFIGURATIONS
-################################################################################################
-
 # Pulse Audio controls
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%

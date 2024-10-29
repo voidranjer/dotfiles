@@ -1,21 +1,17 @@
+lazygit:              https://github.com/jesseduffield/lazygit
+
 # ----- i3wm / DE -----
 fish
-rofi
 nitrogen
-picom
-arandr
 redshift-gtk
 # pavucontrol
 # gnome-screenshot
 # ibus
-# nm-applet
-# blueman-applet
 # xfce4-power-manager
 # gnome-keyring (for vscode GitHub login)
 
 
 # ----- user apps -----
-# firefox
 # alacritty
 # chromium-browser
 # pcmanfm

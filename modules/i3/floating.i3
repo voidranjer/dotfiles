@@ -1,6 +1,3 @@
-################################################################################################
-# SPECIFIC WINDOW MODES
-################################################################################################
 # On X11/Xorg, use `xprop | grep WM_CLASS` to get class name
 
 # Open applications on specific workspaces

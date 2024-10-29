@@ -31,5 +31,5 @@ for i in $CONFIG_DIR_PATH/local/*; do
 done
 
 # Reload
-# i3msg reload
+# i3-msg reload
 swaymsg reload
