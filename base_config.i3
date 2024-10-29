@@ -51,8 +51,6 @@ font xft:Open Sans Semi-Bold 11
 # Launch Program Hotkeys
 # bindsym $mod+9 exec --no-startup-id blurlock
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-# bindsym $mod+p exec --no-startup-id pkill picom
-# bindsym $mod+Ctrl+p exec --no-startup-id picom -b -C
 # bindsym $mod+z exec --no-startup-id morc_menu
 # bindsym $mod+p exec $PACKAGEMAN
 # bindsym $mod+Ctrl+b exec $TERMINAL -e 'bmenu'

@@ -10,16 +10,6 @@
     ]
   },
   {
-    "name": "picom",
-    "link": "https://github.com/yshui/picom",
-    "provides": [
-      {
-        "cmd": "picom",
-        "description": "A lightweight compositor for X11"
-      }
-    ]
-  },
-  {
     "name": "rofi",
     "link": "https://github.com/davatorium/rofi",
     "provides": [

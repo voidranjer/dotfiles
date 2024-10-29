@@ -8,5 +8,15 @@
         "description": "Start ARandR GUI"
       }
     ]
+  },
+  {
+    "name": "picom",
+    "link": "https://github.com/yshui/picom",
+    "provides": [
+      {
+        "cmd": "picom",
+        "description": "A lightweight compositor for X11"
+      }
+    ]
   }
 ]
