@@ -3,7 +3,7 @@ bar {
 	font pango:Inconsolata 10
 	position top
 	tray_output primary
-	status_command bumblebee-status -m cpu \
+	status_command /home/jyap/miniconda3/bin/bumblebee-status -m cpu \
 		memory pasink date time battery \
 		-p root.path=/ time.format="%l:%M %p" date.format="%a %d/%m" \
 		-t iceberg-rainbow

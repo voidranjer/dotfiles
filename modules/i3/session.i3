@@ -15,7 +15,7 @@ mode "$mode_system" {
 #     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
 #    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
 #    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"

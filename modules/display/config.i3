@@ -2,8 +2,10 @@
 
 set $DISPLAY_SCRIPT ~/.screenlayout/layout.sh
 
-bindsym --locked XF86MonBrightnessUp exec brightnessctl s +5%
-bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%- 
+exec_always --no-startup-id $DISPLAY_SCRIPT
+
+bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%- 
 
 # exec_always --no-startup-id $DISPLAY
 
@@ -16,6 +18,6 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Clamshell mode
-set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# set $laptop eDP-1
+# bindswitch --reload lid:on output $laptop disable
+# bindswitch --reload lid:off output $laptop enable

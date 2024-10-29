@@ -5,8 +5,8 @@ import subprocess
 import logging
 import json
 
-# output_file = pathlib.Path.home().joinpath(".config", "i3", "config")
-output_file = pathlib.Path("./output_config.i3")
+output_file = pathlib.Path.home().joinpath(".config", "i3", "config")
+# output_file = pathlib.Path("./output_config.i3")
 
 # Create parent directories if they don't exist
 output_file.parent.mkdir(parents=True, exist_ok=True)

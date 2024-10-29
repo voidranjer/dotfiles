@@ -33,7 +33,7 @@
 ################################################################################################
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-set $TERMINAL foot
+set $TERMINAL alacritty
 set $BROWSER firefox
 set $EDITOR code
 set $SCREENSHOT gnome-screenshot
@@ -50,9 +50,6 @@ font xft:Open Sans Semi-Bold 11
 
 # Launch Program Hotkeys
 # bindsym $mod+9 exec --no-startup-id blurlock
-# bindsym Print exec --no-startup-id i3-scrot
-# bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-# bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 # bindsym $mod+p exec --no-startup-id pkill picom
 # bindsym $mod+Ctrl+p exec --no-startup-id picom -b -C
@@ -69,7 +66,6 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+w exec $BROWSER
 bindsym $mod+f exec $FILEMANAGER
 bindsym $mod+e exec $EDITOR
-bindsym Print exec $SCREENSHOT
 # bindsym $mod+Shift+d --release exec killall dunst; exec notify-send 'restart dunst'
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+d exec "rofi -show drun -modi drun,find:~/.local/share/rofi/finder.sh,window,run,ssh -show-icons -sidebar-mode"
