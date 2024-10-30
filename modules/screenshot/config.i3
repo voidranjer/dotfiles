@@ -1,7 +1,5 @@
 # Docs: https://dev.to/dianjuar/i3wm-screenshot-shortcuts-3n7b
 
-exec --no-startup-id copyq
-
 # For Wayland (requires grim, slurp, and wl-clipboard to be installed)
 # bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 

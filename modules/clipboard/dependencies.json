@@ -1,11 +1,11 @@
 [
   {
-    "name": "greenclip",
-    "link": "https://github.com/erebe/greenclip",
+    "name": "copyq",
+    "link": "https://github.com/hluk/CopyQ",
     "provides": [
       {
-        "cmd": "greenclip daemon",
-        "description": "Start greenclip in daemon mode"
+        "cmd": "copyq",
+        "description": "Clipboard manager with advanced features"
       }
     ]
   }
