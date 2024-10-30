@@ -34,10 +34,9 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 set $TERMINAL alacritty
-set $BROWSER firefox
+set $BROWSER google-chrome
 set $EDITOR code
-set $SCREENSHOT gnome-screenshot
-set $FILEMANAGER $TERMINAL ranger
+set $FILEMANAGER alacritty --command ranger
 # set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
