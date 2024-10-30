@@ -4,6 +4,7 @@
 # assign [class="Thunderbird"] $ws1
 
 # Define windowing style for specific windows <floating|fullscreen|border|sticky>
+for_window [class="code"] layout tabbed
 for_window [title="alsamixer"] floating enable
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable

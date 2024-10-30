@@ -1,1 +1,1 @@
-exec picom -b -C
+# exec picom -b -C

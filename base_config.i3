@@ -67,8 +67,9 @@ bindsym $mod+e exec $EDITOR
 # bindsym $mod+Shift+d --release exec killall dunst; exec notify-send 'restart dunst'
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+d exec "rofi -show drun -modi drun,find:~/.local/share/rofi/finder.sh,window,run,ssh -show-icons -sidebar-mode"
-bindsym $mod+d exec "rofi -show drun -modi drun,window,run,ssh"
-bindsym $mod+Shift+d exec "rofi-theme-selector"
+bindsym $mod+d exec "rofi -show window -modi drun,window,run,ssh"
+bindsym $mod+Shift+d exec "rofi -show drun -modi drun,window,run,ssh"
+# bindsym $mod+Shift+d exec "rofi-theme-selector"
 bindsym $mod+F10 exec $EDITOR ~/.config/i3/config
 ################################################################################################
 # GENERAL
