@@ -18,7 +18,7 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
 #    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3-msg shutdown, mode "default"
+    bindsym Shift+s exec --no-startup-id shutdown now, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"

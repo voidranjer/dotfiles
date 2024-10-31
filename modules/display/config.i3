@@ -4,6 +4,9 @@ set $DISPLAY_SCRIPT ~/.screenlayout/layout.sh
 
 exec_always --no-startup-id $DISPLAY_SCRIPT
 
+# Manual override for when you disconnect a monitor and the built in monitor is still blank
+bindsym $mod+Shift+0 exec xrandr --auto
+
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%- 
 
