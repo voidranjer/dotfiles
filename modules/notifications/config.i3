@@ -1,6 +1,1 @@
-# Todo
-
-# (dunst) - change keybind for Ctrl+Tilda
-# https://dunst-project.org/documentation
-# https://github.com/dunst-project/dunst
-# https://wiki.archlinux.org/title/Dunst
+bindsym $mod+Shift+d exec $SCRIPTS_DIR/toggle_notif_history.sh

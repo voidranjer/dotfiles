@@ -1,0 +1,12 @@
+[
+  {
+    "name": "rofi",
+    "link": "https://github.com/davatorium/rofi",
+    "provides": [
+      {
+        "cmd": "rofi",
+        "description": "A window switcher, application launcher and dmenu replacement"
+      }
+    ]
+  }
+]
