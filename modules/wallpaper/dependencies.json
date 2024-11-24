@@ -1,0 +1,12 @@
+[
+  {
+    "name": "nitrogen",
+    "link": "https://wiki.archlinux.org/title/Nitrogen",
+    "provides": [
+      {
+        "cmd": "nitrogen",
+        "description": "Lightweight wallpaper setter"
+      }
+    ]
+  }
+]

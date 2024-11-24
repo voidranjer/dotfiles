@@ -1,0 +1,28 @@
+lazygit:              https://github.com/jesseduffield/lazygit
+
+# ----- i3wm / DE -----
+fish
+nitrogen
+redshift-gtk
+# pavucontrol
+# gnome-screenshot
+# ibus
+# xfce4-power-manager
+# gnome-keyring (for vscode GitHub login)
+
+
+# ----- user apps -----
+# alacritty
+# chromium-browser
+# pcmanfm
+# featherpad
+# eog
+# vlc
+# htop
+# ranger
+
+
+# ----- config utils -----
+# lxappearance
+# kvantum
+# alacarte

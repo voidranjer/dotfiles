@@ -1,0 +1,1 @@
+exec_always --no-startup-id redshift -P -O 4000

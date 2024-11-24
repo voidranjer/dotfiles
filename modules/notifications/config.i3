@@ -1,0 +1,1 @@
+bindsym $mod+Shift+d exec $SCRIPTS_DIR/toggle_notif_history.sh
