@@ -1,5 +1,10 @@
 # My Personal Configuration Dotfiles
 
+```bash
+lintian i3ranjer.deb
+```
+
+
 ## Instructions to install on Ubuntu-based systems
 
 ### 1. Install `git` (if it doesn't already exist):

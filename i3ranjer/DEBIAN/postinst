@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Define the user's home directory
+USER_HOME=$(eval echo ~$USER)
+
+# Ensure the .config directory exists
+mkdir -p "$USER_HOME/.config"
+
+# Use rsync to copy the entire directory structure, avoid overwriting and set ownership
+rsync -a --ignore-existing --chown=$USER:$USER /etc/skel/i3ranjer/.config/ "$USER_HOME/.config/"

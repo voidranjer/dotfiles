@@ -11,7 +11,7 @@ sudo apt-get -qq autoremove
 
 # Install requirements
 echo "Installing python3 and python3-pip..."
-sudo apt-get install -y \
+sudo apt-get -qq install -y \
     python3 \
     python3-pip
 

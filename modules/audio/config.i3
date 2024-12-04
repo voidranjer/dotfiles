@@ -10,9 +10,5 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-
-# bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
-
-# exec --no-startup-id volumeicon
-# exec --no-startup-id pulseaudio
-# exec --no-startup-id pa-applet
+# Systray
+exec --no-startup-id volumeicon

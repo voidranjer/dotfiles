@@ -56,4 +56,9 @@ for SHELL_SCRIPT in ./modules/*/*.sh; do
 done
 
 # Reload i3 configuration
-i3-msg reload
+i3-msg reload > /dev/null
+if [ $? -eq 0 ]; then
+    echo "i3 configuration reloaded successfully."
+else
+    echo "Failed to reload i3 configuration."
+fi
