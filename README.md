@@ -5,6 +5,7 @@ dpkg-deb --build i3ranjer && sudo apt-get -qq remove i3ranjer && sudo apt-get -q
 lintian i3ranjer.deb
 ```
 
+- Todo: Missing pop notif dunst
 
 ## Instructions to install on Ubuntu-based systems
 

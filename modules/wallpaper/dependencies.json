@@ -1,6 +1,7 @@
 [
   {
     "name": "nitrogen",
-    "provides": ["nitrogen"]
+    "provides": ["nitrogen"],
+    "consumes": ["usr/share/backgrounds/i3ranjer/black.png"]
   }
 ]

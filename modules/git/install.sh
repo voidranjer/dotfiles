@@ -8,14 +8,4 @@ sudo install lazygit -D -t /usr/local/bin/
 # Clean up
 rm lazygit.tar.gz lazygit
 
-# Alias for bash
-if ! grep -Fxq "alias lg='lazygit'" ~/.bashrc; then
-    echo "alias lg='lazygit'" >> ~/.bashrc
-fi
-
-# Alias for fish
-mkdir -p ~/.config/fish
-touch ~/.config/fish/config.fish
-if ! grep -Fxq "alias lg='lazygit'" ~/.config/fish/config.fish; then
-    echo "alias lg='lazygit'" >> ~/.config/fish/config.fish
-fi
+# Note: The .config/fish/config.fish file contains an alias for this module (indirect dependency).
