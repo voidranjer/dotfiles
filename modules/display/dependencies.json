@@ -1,35 +1,19 @@
 [
   {
+    "name": "x11-xserver-utils",
+    "provides": ["xrandr"]
+  },
+  {
     "name": "arandr",
-    "link": "https://github.com/haad/arandr",
-    "provides": [
-      {
-        "cmd": "arandr",
-        "description": "Start ARandR GUI"
-      }
-    ]
+    "provides": ["arandr"]
   },
   {
     "name": "picom",
-    "link": "https://github.com/yshui/picom",
-    "provides": [
-      {
-        "cmd": "picom",
-        "description": "A lightweight compositor for X11"
-      }
-    ]
+    "provides": ["picom"],
+    "manual": true
   },
   {
-    "name": "redshift",
-    "link": "https://github.com/jonls/redshift",
-    "provides": [
-      {
-        "cmd": "redshift -P -O 4000",
-        "description": "Redshift oneshot mode, set to 4000k temperature (and clear previous gamma wiht `-P`)"
-      }
-    ]
-  },
-  {
-    "name": "brightnessctl"
+    "name": "brightnessctl",
+    "provides": ["brightnessctl"]
   }
 ]

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "x11-xkb-utils",
+    "provides": ["setxkbmap"]
+  }
+]

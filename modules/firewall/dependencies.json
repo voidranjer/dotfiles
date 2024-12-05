@@ -1,0 +1,6 @@
+[
+  {
+    "name": "gufw",
+    "provides": ["gufw"]
+  }
+]

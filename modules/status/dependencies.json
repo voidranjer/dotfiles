@@ -1,0 +1,6 @@
+[
+  {
+    "name": "bumblebee-status",
+    "provides": ["bumblebee-status"]
+  }
+]

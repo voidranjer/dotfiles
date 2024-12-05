@@ -1,16 +1,8 @@
 [
   {
     "name": "blueman",
-    "link": "https://wiki.archlinux.org/title/Blueman",
-    "provides": [
-      {
-        "cmd": "blueman-applet",
-        "description": "System tray icon for managing Bluetooth devices"
-      },
-      {
-        "cmd": "blueman-manager",
-        "description": "Graphical Bluetooth manager"
-      }
-    ]
+    "provides": ["blueman-applet", "blueman-manager"],
+    "consumes": ["usr/bin/autotiling"],
+    "manual": true
   }
 ]

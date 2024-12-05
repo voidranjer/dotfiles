@@ -1,24 +1,6 @@
 [
   {
     "name": "networkmanager",
-    "link": "https://wiki.archlinux.org/title/NetworkManager",
-    "provides": [
-      {
-        "cmd": "nmcli",
-        "description": "Command-line interface for NetworkManager"
-      },
-      {
-        "cmd": "nmtui",
-        "description": "Text-based user interface for NetworkManager"
-      },
-      {
-        "cmd": "nm-applet",
-        "description": "System tray icon for managing network connections"
-      },
-      {
-        "cmd": "nm-connection-editor",
-        "description": "Graphical network connection manager"
-      }
-    ]
+    "provides": ["nmcli", "nmtui", "nm-applet", "nm-connection-editor"]
   }
 ]

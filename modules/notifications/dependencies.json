@@ -1,7 +1,6 @@
 [
   {
     "name": "dunst",
-    "link": "https://github.com/dunst-project/dunst",
-    "provides": []
+    "provides": ["dunst", "dunstctl"]
   }
 ]

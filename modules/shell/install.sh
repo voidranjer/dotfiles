@@ -3,10 +3,6 @@
 # If one command fails, stop the script
 set -e
 
-# Install Fish
-echo "Installing fish shell..."
-sudo apt-get -qq install fish
-
 # Install Copilot
 echo "Installing Copilot..."
 (type -p wget >/dev/null || (sudo apt-get -qq update && sudo apt-get install wget -y)) \

@@ -1,0 +1,8 @@
+[
+  {
+    "name": "autotiling",
+    "provides": ["autotiling"],
+    "consumes": ["usr/bin/autotiling"],
+    "manual": true
+  }
+]

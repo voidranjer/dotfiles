@@ -1,0 +1,6 @@
+[
+  {
+    "name": "fish",
+    "provides": ["fish"]
+  }
+]

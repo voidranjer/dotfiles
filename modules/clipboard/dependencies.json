@@ -1,12 +1,1 @@
-[
-  {
-    "name": "copyq",
-    "link": "https://github.com/hluk/CopyQ",
-    "provides": [
-      {
-        "cmd": "copyq",
-        "description": "Clipboard manager with advanced features"
-      }
-    ]
-  }
-]
+[]

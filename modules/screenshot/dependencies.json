@@ -1,35 +1,11 @@
 [
   {
-    "name": "xdotool"
-  },
-  {
     "name": "maim",
-    "link": "https://github.com/naelstrof/maim",
-    "provides": [
-      {
-        "cmd": "maim",
-        "description": "Utility to take screenshots"
-      }
-    ]
+    "provides": ["maim"]
   },
-  {
-    "name": "copyq",
-    "link": "https://github.com/hluk/CopyQ",
-    "provides": [
-      {
-        "cmd": "copyq",
-        "description": "Clipboard manager with advanced features"
-      }
-    ]
-  },
+
   {
     "name": "xclip",
-    "link": "https://github.com/astrand/xclip",
-    "provides": [
-      {
-        "cmd": "xclip",
-        "description": "Command-line interface to the X11 clipboard"
-      }
-    ]
+    "provides": ["xclip"]
   }
 ]
