@@ -15,3 +15,12 @@ mkdir -p "$USER_HOME/.config"
 
 # Use rsync to copy the entire directory structure, avoid overwriting, and set ownership
 rsync -a --ignore-existing --chown="$ACTUAL_USER:$ACTUAL_USER" /etc/skel/i3ranjer/.config/ "$USER_HOME/.config/"
+
+# Run per-module postinst scripts
+MODULE_SCRIPTS_DIR="/usr/share/i3ranjer/scripts"
+for INSTALL_SCRIPT in $MODULE_SCRIPTS_DIR/*.sh; do
+    if [ -f "$INSTALL_SCRIPT" ]; then
+        chmod +x "$INSTALL_SCRIPT"
+        "$INSTALL_SCRIPT"
+    fi
+done

@@ -4,10 +4,10 @@
     "provides": ["fish"]
   },
   {
-    "name": "copilot",
-    "provides": ["ghcmd", "ghask"],
+    "name": "lazygit",
+    "provides": ["lazygit", "lg"],
     "consumes": [
-      "usr/share/i3ranjer/scripts/copilot.sh",
+      "usr/share/i3ranjer/scripts/lazygit.sh",
       "etc/skel/i3ranjer/.config/fish/config.fish"
     ],
     "manual": true

@@ -2,4 +2,4 @@
 
 # Enable Firewall
 echo "Enabling Firewall..."
-echo "y" | sudo ufw enable
+echo "y" | ufw enable

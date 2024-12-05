@@ -1,6 +1,7 @@
 [
   {
     "name": "gufw",
-    "provides": ["gufw"]
+    "provides": ["gufw"],
+    "consumes": ["usr/share/i3ranjer/scripts/firewall.sh"]
   }
 ]
