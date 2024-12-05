@@ -1,11 +1,17 @@
 #!/bin/bash
 set -e
 
-# Define the user's home directory
-USER_HOME=$(eval echo ~$USER)
+# Get the actual user (not root)
+ACTUAL_USER=${SUDO_USER:-$USER}
+
+# Get the home directory of the actual user
+USER_HOME=$(getent passwd "$ACTUAL_USER" | cut -d: -f6)
+
+# Log the detected home directory for debugging
+echo "$USER_HOME" >> /var/log/i3ranjer.log
 
 # Ensure the .config directory exists
 mkdir -p "$USER_HOME/.config"
 
-# Use rsync to copy the entire directory structure, avoid overwriting and set ownership
-rsync -a --ignore-existing --chown=$USER:$USER /etc/skel/i3ranjer/.config/ "$USER_HOME/.config/"
+# Use rsync to copy the entire directory structure, avoid overwriting, and set ownership
+rsync -a --ignore-existing --chown="$ACTUAL_USER:$ACTUAL_USER" /etc/skel/i3ranjer/.config/ "$USER_HOME/.config/"

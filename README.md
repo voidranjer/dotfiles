@@ -1,6 +1,7 @@
 # My Personal Configuration Dotfiles
 
 ```bash
+dpkg-deb --build i3ranjer && sudo apt-get -qq remove i3ranjer && sudo apt-get -qq install ./i3ranjer.deb
 lintian i3ranjer.deb
 ```
 

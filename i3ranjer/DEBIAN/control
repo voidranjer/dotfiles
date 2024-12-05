@@ -1,0 +1,10 @@
+Package: i3ranjer
+Version: 1.0
+Section: misc
+Priority: optional
+Architecture: all
+Depends: volumeicon-alsa
+Maintainer: James Yap <contact@jamesyap.org>
+Description: voidranjer's configuration for i3wm
+  This package installs configuration files for i3 window manager and sets up
+  various dependencies for a complete desktop environment.
