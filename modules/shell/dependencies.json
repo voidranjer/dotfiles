@@ -11,5 +11,9 @@
       "usr/share/i3ranjer/dotfiles/fish/config.fish"
     ],
     "manual": true
+  },
+  {
+    "name": "alacritty",
+    "provides": ["alacritty"]
   }
 ]
