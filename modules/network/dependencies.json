@@ -1,6 +1,6 @@
 [
   {
-    "name": "networkmanager",
+    "name": "network-manager",
     "provides": ["nmcli", "nmtui", "nm-applet", "nm-connection-editor"]
   }
 ]
