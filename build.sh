@@ -5,7 +5,7 @@ set -e
 
 generate_i3_config() {
     # Define paths
-    OUTPUT_FILE="./i3ranjer/etc/skel/i3ranjer/.config/i3/config"
+    OUTPUT_FILE="./i3ranjer/usr/share/i3ranjer/dotfiles/i3/config"
     BASE_CONFIG="./base/config.i3"
 
     # Create parent directories if they don't exist

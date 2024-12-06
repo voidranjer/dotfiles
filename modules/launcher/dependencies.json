@@ -2,6 +2,6 @@
   {
     "name": "rofi",
     "provides": ["rofi"],
-    "consumes": ["etc/skel/i3ranjer/.config/rofi/config.rasi"]
+    "consumes": ["usr/share/i3ranjer/dotfiles/rofi/config.rasi"]
   }
 ]

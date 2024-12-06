@@ -10,6 +10,6 @@
   {
     "name": "volumeicon-alsa",
     "provides": ["volumeicon"],
-    "consumes": ["etc/skel/i3ranjer/.config/volumeicon/volumeicon"]
+    "consumes": ["usr/share/i3ranjer/dotfiles/volumeicon/volumeicon"]
   }
 ]

@@ -14,9 +14,8 @@ echo "$USER_HOME" >> /var/log/i3ranjer.log
 mkdir -p "$USER_HOME/.config"
 
 # Use rsync to copy the entire directory structure, avoid overwriting, and set ownership
-rsync -a --ignore-existing --chown="$ACTUAL_USER:$ACTUAL_USER" /etc/skel/i3ranjer/.config/ "$USER_HOME/.config/"
-
-# Run per-module postinst scripts
+rsync -a --ignore-existing --chown="$ACTUAL_USER:$ACTUAL_USER" /usr/share/i3ranjer/dotfiles/ "$USER_HOME/.config/"
+ perdotfiles postinst scripts
 MODULE_SCRIPTS_DIR="/usr/share/i3ranjer/scripts"
 for INSTALL_SCRIPT in $MODULE_SCRIPTS_DIR/*.sh; do
     if [ -f "$INSTALL_SCRIPT" ]; then
