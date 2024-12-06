@@ -2,7 +2,10 @@
   {
     "name": "autotiling",
     "provides": ["autotiling"],
-    "consumes": ["usr/bin/autotiling"],
+    "consumes": ["python3-i3ipc", "usr/bin/autotiling"],
     "manual": true
+  },
+  {
+    "name": "python3-i3ipc"
   }
 ]
