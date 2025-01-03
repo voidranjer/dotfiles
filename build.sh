@@ -3,6 +3,9 @@
 # Fail on error
 set -e
 
+# Install prerequisites
+sudo apt update && sudo apt install -y git jq lintian
+
 generate_i3_config() {
     # Define paths
     OUTPUT_FILE="./i3ranjer/usr/share/i3ranjer/dotfiles/i3/config"

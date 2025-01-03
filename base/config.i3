@@ -35,9 +35,9 @@
 set $SCRIPTS_DIR ~/.config/i3/scripts
 set $mod Mod4
 set $TERMINAL alacritty
-set $BROWSER google-chrome
+set $BROWSER firefox
 set $EDITOR code
-set $FILEMANAGER alacritty --command ranger
+set $FILEMANAGER thunar
 # set $FILEMANAGER pcmanfm # Note: There is a line below that executes this command: 'exec --no-startup-id pcmanfm -d'
 # set $PACKAGEMAN pamac-manager
 
