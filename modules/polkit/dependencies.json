@@ -1,0 +1,11 @@
+[
+  {
+    "name": "policykit-desktop-privileges"
+  },
+  {
+    "name": "policykit-1-gnome",
+    "provides": [
+      "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
+    ]
+  }
+]
