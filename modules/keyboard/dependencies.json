@@ -1,0 +1,14 @@
+[
+  {
+    "name": "x11-xkb-utils",
+    "provides": [
+      "setxkbmap"
+    ]
+  },
+  {
+    "name": "x11-xserver-utils",
+    "provides": [
+      "xset"
+    ]
+  }
+]
