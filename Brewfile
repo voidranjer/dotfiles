@@ -25,6 +25,7 @@ brew "git-lfs"    # Git Large File Storage, for handling large binary files effi
 brew "difftastic" # A structural diff tool that understands code syntax (often better than traditional line-based diffs)
 brew "jj"         # Jujutsu - an experimental, user-friendly Git-compatible version control system
 brew "repomix"    # A tool to synchronize Git repositories and branches (useful for mono-repos or complex setups)
+brew "lazygit"    # A simple terminal UI for Git, making it easier to visualize and manage repositories
 
 # --- Security & Credentials ---
 brew "gnupg" # GNU Privacy Guard, for encryption and signing (often used with Git commit signing)
