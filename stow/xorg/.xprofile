@@ -1,0 +1,6 @@
+# Remap Caps Lock to Escape
+setxkbmap -option caps:escape
+
+# Set keyboard repeat rate and delay
+# xset r rate <delay_ms> <rate_cps>
+xset r rate 250 30 # Example: 250ms delay, 30 characters/second
