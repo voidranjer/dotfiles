@@ -85,9 +85,13 @@ install_brew_packages() {
 # Install fzf
 install_fzf() {
   echo "Cloning fzf repository..."
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  echo "Running fzf install script..."
-  ~/.fzf/install --all
+  if git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf >/dev/null 2>&1; then
+    echo "Clone successful."
+    echo "Running fzf install script..."
+    ~/.fzf/install --all
+  else
+    echo "Clone failed." >&2
+  fi
 }
 
 # Sets up dotfiles symlinks using Stow
