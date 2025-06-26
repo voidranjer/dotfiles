@@ -87,7 +87,7 @@ install_fzf() {
   echo "Cloning fzf repository..."
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   echo "Running fzf install script..."
-  ~/.fzf/install
+  ~/.fzf/install --all
 }
 
 # Sets up dotfiles symlinks using Stow

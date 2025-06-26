@@ -3,7 +3,7 @@
 
 # --- Core Development Tools & Languages ---
 brew "node" # JavaScript runtime and package manager (npm/yarn via corepack)
-brew "mise" # A multi-language version manager (like asdf or nvm/rbenv/pyenv combined)
+# brew "mise" # A multi-language version manager (like asdf or nvm/rbenv/pyenv combined)
 brew "gdb"  # A powerful debugger for C/C++ and other languages (GNU Debugger)
 
 # --- Terminal Utilities & Enhancements ---
