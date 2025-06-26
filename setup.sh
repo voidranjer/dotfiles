@@ -38,9 +38,9 @@ check_dependencies() {
   if ! command -v git &>/dev/null; then
     missing_deps+=("git")
   fi
-  if ! command -v stow &>/dev/null; then
-    missing_deps+=("stow")
-  fi
+  # if ! command -v stow &>/dev/null; then
+  #   missing_deps+=("stow")
+  # fi
   if ! command -v brew &>/dev/null; then
     missing_deps+=("brew")
   fi
@@ -69,6 +69,10 @@ setup_tmux_tpm() {
 
 # Installs packages using Homebrew Bundle
 install_brew_packages() {
+  # TODO: Temporary monkeypatch.
+  # For devcontainer feature: ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2
+  sudo chown -R user /home/linuxbrew/.linuxbrew
+
   log "Installing packages using Homebrew Bundle..."
   if [ ! -f "${BREWFILE_PATH}" ]; then
     error_exit "Brewfile not found at ${BREWFILE_PATH}. Please ensure it exists."
@@ -76,6 +80,14 @@ install_brew_packages() {
   echo "Running 'brew bundle install' using Brewfile: ${BREWFILE_PATH}"
   brew bundle install --file="${BREWFILE_PATH}" || error_exit "Homebrew Bundle installation failed."
   echo "Homebrew packages installed/updated successfully."
+}
+
+# Install fzf
+install_fzf() {
+  echo "Cloning fzf repository..."
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  echo "Running fzf install script..."
+  ~/.fzf/install
 }
 
 # Sets up dotfiles symlinks using Stow
@@ -127,6 +139,7 @@ main() {
   install_brew_packages
   symlink_dotfiles
   update_bat_cache
+  install_fzf
 
   log "Dotfiles setup completed!"
   echo "Please remember to:"
