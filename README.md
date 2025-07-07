@@ -6,6 +6,5 @@ A collection of my dotfiles powered by stow and brew.
 
 ```bash
 cd && git clone git@github.com:voidranjer/dotfiles.git
-cd dotfiles && bash ./install.sh
-brew bundle install ./Brewfile
+cd dotfiles && bash ./setup.sh
 ```
