@@ -38,12 +38,12 @@ check_dependencies() {
   if ! command -v git &>/dev/null; then
     missing_deps+=("git")
   fi
-  # if ! command -v stow &>/dev/null; then
-  #   missing_deps+=("stow")
-  # fi
-  if ! command -v brew &>/dev/null; then
-    missing_deps+=("brew")
+  if ! command -v stow &>/dev/null; then
+    missing_deps+=("stow")
   fi
+  # if ! command -v brew &>/dev/null; then
+  #   missing_deps+=("brew")
+  # fi
 
   if [ ${#missing_deps[@]} -gt 0 ]; then
     error_exit "The following critical dependencies are missing: ${missing_deps[*]}. Please install them before running this script."
@@ -69,9 +69,8 @@ setup_tmux_tpm() {
 
 # Installs packages using Homebrew Bundle
 install_brew_packages() {
-  # TODO: Temporary monkeypatch.
   # For devcontainer feature: ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2
-  sudo chown -R user /home/linuxbrew/.linuxbrew
+  # sudo chown -R user /home/linuxbrew/.linuxbrew
 
   log "Installing packages using Homebrew Bundle..."
   if [ ! -f "${BREWFILE_PATH}" ]; then
@@ -82,15 +81,45 @@ install_brew_packages() {
   echo "Homebrew packages installed/updated successfully."
 }
 
-# Install fzf
+# A function to install fzf (a command-line fuzzy finder).
+#
+# This function checks for dependencies (git), and verifies that fzf is not
+# already installed before proceeding. It provides detailed feedback to the user
+# throughout the process.
 install_fzf() {
+  # Check if fzf is already installed by checking for the directory.
+  if [ -d "$HOME/.fzf" ]; then
+    echo "fzf is already installed. Skipping installation."
+    return 0 # Exit the function with a success code
+  fi
+
+  # Check if git is installed, as it's a dependency for cloning.
+  if ! command -v git &>/dev/null; then
+    echo "Error: git is not installed. Please install git and try again." >&2
+    return 1 # Exit the function with an error code
+  fi
+
   echo "Cloning fzf repository..."
-  if git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf >/dev/null 2>&1; then
+  # We redirect stdout to /dev/null to hide the normal "git clone" output,
+  # but we allow stderr to pass through. This way, if there's an error
+  # (e.g., network issue, repository not found), the user will see it.
+  if git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf" >/dev/null; then
     echo "Clone successful."
     echo "Running fzf install script..."
-    ~/.fzf/install --all
+
+    # The --all flag will automatically:
+    #   - Update your shell configuration files (.bashrc, .zshrc, etc.)
+    #   - Set up key bindings (CTRL-T, CTRL-R, ALT-C)
+    #   - Set up fuzzy auto-completion
+    # This makes the installation non-interactive. If you want the script
+    # to ask you questions, remove the '--all' flag.
+    "$HOME/.fzf/install" --all
+
+    echo "fzf installation complete. Please restart your shell or source your config file."
   else
+    # The error message from git clone will be displayed automatically.
     echo "Clone failed." >&2
+    return 1 # Exit with an error code
   fi
 }
 
@@ -112,7 +141,7 @@ symlink_dotfiles() {
     echo "  -> Stowing: ${app_name}"
     # Using 'stow --restow' to ensure idempotency and re-create symlinks if needed.
     # '--target=${HOME}' specifies the destination root for symlinks.
-    stow --restow --target="${HOME}" "${app_name}" || {
+    stow --adopt --restow --target="${HOME}" "${app_name}" || {
       echo "    Warning: Stow failed for ${app_name}. This might be due to existing files."
       echo "    Consider moving/deleting existing files or using 'stow --adopt' if applicable."
     }
@@ -140,7 +169,7 @@ main() {
 
   check_dependencies
   setup_tmux_tpm
-  install_brew_packages
+  # install_brew_packages
   symlink_dotfiles
   update_bat_cache
   install_fzf

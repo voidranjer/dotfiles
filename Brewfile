@@ -7,6 +7,7 @@
 brew "gdb"  # A powerful debugger for C/C++ and other languages (GNU Debugger)
 
 # --- Terminal Utilities & Enhancements ---
+brew "tmux"
 brew "fish"       # User-friendly command line shell with autosuggestions and syntax highlighting
 # brew "starship"   # Cross-shell prompt that's fast, customizable, and shows useful context
 # brew "zellij"     # A terminal workspace and multiplexer, alternative to tmux/screen
