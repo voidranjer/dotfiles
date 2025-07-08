@@ -8,14 +8,28 @@
 #   jd build        # Rebuilds the devcontainer
 #   jd exec         # Opens a shell in the running container
 #   jd stop         # Stops the container services
-#   jd down         # Stops and removes the container services
+#   jd down         # Stops and removes the container, network, and volumes
 
 function jd
     # --- Configuration ---
     # Set default values for arguments
-    set -l mode (count $argv > 0 and echo $argv[1] or echo "up")
-    set -l workspace_folder (count $argv > 1 and echo $argv[2] or echo ".")
-    set -l container_user (count $argv > 2 and echo $argv[3] or echo "user")
+    #
+    # (Correction) Use a clearer `if` block for parsing arguments.
+    # This is more readable and less prone to errors than the 'and/or' chain.
+    set -l mode up
+    if test (count $argv) -gt 0
+        set mode $argv[1]
+    end
+
+    set -l workspace_folder "."
+    if test (count $argv) -gt 1
+        set workspace_folder $argv[2]
+    end
+
+    set -l container_user user
+    if test (count $argv) -gt 2
+        set container_user $argv[3]
+    end
 
     # Change this to point to your dotfiles repository
     set -l dotfiles_repo "https://github.com/voidranjer/dotfiles.git"
@@ -38,18 +52,18 @@ function jd
     # --- Helper Functions ---
 
     # Builds the devcontainer image
-    function build_devcontainer
+    function _jd_build
         set -l ws_folder $argv[1]
-        echo "Building devcontainer with workspace folder: $ws_folder"
+        echo "Building devcontainer in: $ws_folder"
         devcontainer build --no-cache --workspace-folder $ws_folder \
             --additional-features "$additional_features"
     end
 
     # Starts and runs the devcontainer
-    function start_devcontainer
+    function _jd_up
         set -l ws_folder $argv[1]
         set -l cont_user $argv[2]
-        echo "Starting devcontainer with workspace folder: $ws_folder"
+        echo "Starting devcontainer in: $ws_folder"
         devcontainer up --workspace-folder $ws_folder \
             --dotfiles-repository $dotfiles_repo \
             --additional-features "$additional_features" \
@@ -61,8 +75,9 @@ function jd
     end
 
     # Executes a command or opens a shell inside the container
-    function exec_devcontainer
+    function _jd_exec
         set -l ws_folder $argv[1]
+        echo "Executing shell in: $ws_folder"
         devcontainer exec --workspace-folder $ws_folder \
             --remote-env TERM=$TERM \
             --remote-env SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
@@ -70,42 +85,51 @@ function jd
             $shell
     end
 
-    # Stops the docker compose services
-    function stop_devcontainer
+    # (Correction) Stops the services without removing them.
+    # This now correctly uses 'docker compose stop'.
+    function _jd_stop
         set -l ws_folder $argv[1]
-        # Use (command) for command substitution in fish
-        set -l compose_file (readlink -f $ws_folder)/.devcontainer/compose.yaml
-        set -l override_file (readlink -f $ws_folder)/.devcontainer/compose.override.yaml
-        docker compose -f $compose_file -f $override_file down
+        echo "Stopping services in: $ws_folder"
+        # The devcontainer CLI does not have a 'stop' command, so we find the
+        # compose files and use 'docker compose' directly.
+        set -l compose_config (devcontainer read-configuration --workspace-folder $ws_folder --include-merged-configuration | jq -r '.mergedConfiguration.dockerComposeFile | if type == "array" then .[] else . end')
+        if test -z "$compose_config"
+            echo "Error: Could not find docker-compose file configuration."
+            return 1
+        end
+
+        set -l compose_files
+        for file in $compose_config
+            set -a compose_files -f (realpath (dirname $ws_folder/.devcontainer/devcontainer.json)/$file)
+        end
+
+        docker compose $compose_files stop
     end
 
-    # Stops and removes the docker compose services
-    function remove_devcontainer
+    # (Correction) Stops and removes the devcontainer services, network, etc.
+    # This now correctly uses the 'devcontainer down' command.
+    function _jd_down
         set -l ws_folder $argv[1]
-        set -l compose_file (readlink -f $ws_folder)/.devcontainer/compose.yaml
-        set -l override_file (readlink -f $ws_folder)/.devcontainer/compose.override.yaml
-        docker compose -f $compose_file -f $override_file rm
+        echo "Tearing down devcontainer in: $ws_folder"
+        devcontainer down --workspace-folder $ws_folder
     end
 
     # --- Main Logic ---
     # Use a switch statement for command routing
     switch $mode
         case up
-            start_devcontainer $workspace_folder $container_user
+            _jd_up $workspace_folder $container_user
         case build
-            build_devcontainer $workspace_folder
+            _jd_build $workspace_folder
         case exec
-            exec_devcontainer $workspace_folder
+            _jd_exec $workspace_folder
         case stop
-            stop_devcontainer $workspace_folder
+            _jd_stop $workspace_folder
         case down
-            remove_devcontainer $workspace_folder
+            _jd_down $workspace_folder
         case '*' # Default case for invalid commands
-            echo "Invalid command: $mode"
+            echo "Invalid command: '$mode'"
+            echo "Usage: jd [up|build|exec|stop|down] [workspace_folder] [container_user]"
             return 1
     end
 end
-
-# To make this function available in your shell, save it as a file named
-# 'dc.fish' in your ~/.config/fish/functions/ directory.
-# Then you can run it by simply typing 'dc' in your terminal.
