@@ -176,7 +176,7 @@ main() {
 
   log "Dotfiles setup completed!"
   echo "Please remember to:"
-  echo "  - Start a new shell session (e.g., 'fish' or open a new terminal) for changes to take full effect."
+  echo "  - Start a new shell session (e.g., 'sf' or open a new terminal) for changes to take full effect."
   echo "  - Inside Tmux, press your prefix key (usually Ctrl+b) then 'I' (capital i) to install tpm plugins."
   echo "=========================================="
 }

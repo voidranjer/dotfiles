@@ -1,135 +1,104 @@
-# Devcontainer management function for Fish shell
+# Devcontainer helper function for Fish shell
 #
 # Usage:
-#   jd [up|build|exec|stop|down] [workspace_folder] [container_user]
+#   jd [command] [workspace_folder] [container_user]
 #
-# Examples:
-#   jd up . myuser  # Starts the devcontainer in the current directory for 'myuser'
-#   jd build        # Rebuilds the devcontainer
-#   jd exec         # Opens a shell in the running container
-#   jd stop         # Stops the container services
-#   jd down         # Stops and removes the container, network, and volumes
+# Commands:
+#   up      - Starts the devcontainer (default command)
+#   build   - Builds the devcontainer
+#   exec    - Executes a shell inside the running devcontainer
+#   stop    - Stops the devcontainer services
+#   down    - Stops and removes the devcontainer containers
+#
+# Arguments:
+#   workspace_folder - The folder containing the .devcontainer configuration (default: .)
+#   container_user   - The username inside the container for volume mounts (default: user)
 
 function jd
     # --- Configuration ---
-    # Set default values for arguments
-    #
-    # (Correction) Use a clearer `if` block for parsing arguments.
-    # This is more readable and less prone to errors than the 'and/or' chain.
-    set -l mode up
-    if test (count $argv) -gt 0
-        set mode $argv[1]
-    end
-
-    set -l workspace_folder "."
-    if test (count $argv) -gt 1
-        set workspace_folder $argv[2]
-    end
-
-    set -l container_user user
-    if test (count $argv) -gt 2
-        set container_user $argv[3]
-    end
-
     # Change this to point to your dotfiles repository
     set -l dotfiles_repo "https://github.com/voidranjer/dotfiles.git"
 
     # Get features from: https://containers.dev/features
     set -l additional_features '{
-        "ghcr.io/jmdaly/features/fish:1": {},
-        "ghcr.io/jmdaly/features/rust-cli-tools:latest": {},
-        "ghcr.io/jmdaly/features/neovim-bin:1": {},
-        "ghcr.io/kreemer/features/stow:1": {},
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/jmdaly/features/difftastic:1": {},
-        "ghcr.io/georgofenbeck/features/lazygit-linuxbinary:1": {}
+      "ghcr.io/jmdaly/features/fish:1": {},
+      "ghcr.io/jmdaly/features/rust-cli-tools:latest": {},
+      "ghcr.io/jmdaly/features/neovim-bin:1": {},
+      "ghcr.io/kreemer/features/stow:1": {},
+      "ghcr.io/devcontainers/features/node:1": {},
+      "ghcr.io/jmdaly/features/difftastic:1": {},
+      "ghcr.io/georgofenbeck/features/lazygit-linuxbinary:1": {}
     }'
 
     # Change this to your preferred shell
     set -l shell fish
     # --- End Configuration ---
 
-    # --- Helper Functions ---
-
-    # Builds the devcontainer image
-    function _jd_build
-        set -l ws_folder $argv[1]
-        echo "Building devcontainer in: $ws_folder"
-        devcontainer build --no-cache --workspace-folder $ws_folder \
-            --additional-features "$additional_features"
+    # Set command-line arguments with defaults
+    set -l mode $argv[1]
+    if test -z "$mode"
+        set mode up
     end
 
-    # Starts and runs the devcontainer
-    function _jd_up
-        set -l ws_folder $argv[1]
-        set -l cont_user $argv[2]
-        echo "Starting devcontainer in: $ws_folder"
-        devcontainer up --workspace-folder $ws_folder \
-            --dotfiles-repository $dotfiles_repo \
-            --additional-features "$additional_features" \
-            --mount type=bind,source=$SSH_AUTH_SOCK,target=$SSH_AUTH_SOCK \
-            --mount type=bind,source=$HOME/devcontainer_data/.tmux,target=/home/$cont_user/.tmux \
-            --mount type=bind,source=$HOME/devcontainer_data/.local,target=/home/$cont_user/.local \
-            --mount type=bind,source=$HOME/devcontainer_data/.cache,target=/home/$cont_user/.cache \
-            --mount type=bind,source=$HOME/.local/state/nvim,target=/home/$cont_user/.local/state/nvim
+    set -l workspace_folder $argv[2]
+    if test -z "$workspace_folder"
+        set workspace_folder "."
     end
 
-    # Executes a command or opens a shell inside the container
-    function _jd_exec
-        set -l ws_folder $argv[1]
-        echo "Executing shell in: $ws_folder"
-        devcontainer exec --workspace-folder $ws_folder \
-            --remote-env TERM=$TERM \
-            --remote-env SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
-            --remote-env SHELL=$shell \
-            $shell
+    set -l container_user $argv[3]
+    if test -z "$container_user"
+        set container_user user
     end
 
-    # (Correction) Stops the services without removing them.
-    # This now correctly uses 'docker compose stop'.
-    function _jd_stop
-        set -l ws_folder $argv[1]
-        echo "Stopping services in: $ws_folder"
-        # The devcontainer CLI does not have a 'stop' command, so we find the
-        # compose files and use 'docker compose' directly.
-        set -l compose_config (devcontainer read-configuration --workspace-folder $ws_folder --include-merged-configuration | jq -r '.mergedConfiguration.dockerComposeFile | if type == "array" then .[] else . end')
-        if test -z "$compose_config"
-            echo "Error: Could not find docker-compose file configuration."
-            return 1
-        end
+    # Ensure the workspace folder path is absolute for docker-compose
+    set -l absolute_workspace_folder (realpath $workspace_folder)
 
-        set -l compose_files
-        for file in $compose_config
-            set -a compose_files -f (realpath (dirname $ws_folder/.devcontainer/devcontainer.json)/$file)
-        end
-
-        docker compose $compose_files stop
-    end
-
-    # (Correction) Stops and removes the devcontainer services, network, etc.
-    # This now correctly uses the 'devcontainer down' command.
-    function _jd_down
-        set -l ws_folder $argv[1]
-        echo "Tearing down devcontainer in: $ws_folder"
-        devcontainer down --workspace-folder $ws_folder
-    end
-
-    # --- Main Logic ---
-    # Use a switch statement for command routing
-    switch $mode
-        case up
-            _jd_up $workspace_folder $container_user
+    # Main logic using a switch statement
+    switch "$mode"
         case build
-            _jd_build $workspace_folder
+            echo "Building devcontainer with workspace folder: $absolute_workspace_folder"
+            devcontainer build --no-cache --workspace-folder $absolute_workspace_folder \
+                --additional-features "$additional_features"
+
+        case up
+            echo "Starting devcontainer with workspace folder: $absolute_workspace_folder"
+            # Ensure directories for mounting exist on the host
+            mkdir -p "$HOME/devcontainer_data/.tmux"
+            mkdir -p "$HOME/devcontainer_data/.local"
+            mkdir -p "$HOME/devcontainer_data/.cache"
+            mkdir -p "$HOME/.local/state/nvim"
+
+            devcontainer up --workspace-folder $absolute_workspace_folder \
+                --dotfiles-repository $dotfiles_repo \
+                --additional-features "$additional_features" \
+                --mount type=bind,source=$SSH_AUTH_SOCK,target=$SSH_AUTH_SOCK \
+                --mount type=bind,source="$HOME/devcontainer_data/.tmux",target="/home/$container_user/.tmux" \
+                --mount type=bind,source="$HOME/devcontainer_data/.local",target="/home/$container_user/.local" \
+                --mount type=bind,source="$HOME/devcontainer_data/.cache",target="/home/$container_user/.cache" \
+                --mount type=bind,source="$HOME/.local/state/nvim",target="/home/$container_user/.local/state/nvim"
+
         case exec
-            _jd_exec $workspace_folder
+            devcontainer exec --workspace-folder $absolute_workspace_folder \
+                --remote-env TERM=$TERM \
+                --remote-env SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+                --remote-env SHELL=$shell \
+                $shell
+
         case stop
-            _jd_stop $workspace_folder
+            echo "Stopping devcontainer services for: $absolute_workspace_folder"
+            set -l compose_file "$absolute_workspace_folder/.devcontainer/compose.yaml"
+            set -l override_file "$absolute_workspace_folder/.devcontainer/compose.override.yaml"
+            docker compose -f $compose_file -f $override_file down
+
         case down
-            _jd_down $workspace_folder
-        case '*' # Default case for invalid commands
-            echo "Invalid command: '$mode'"
-            echo "Usage: jd [up|build|exec|stop|down] [workspace_folder] [container_user]"
+            echo "Removing devcontainer for: $absolute_workspace_folder"
+            set -l compose_file "$absolute_workspace_folder/.devcontainer/compose.yaml"
+            set -l override_file "$absolute_workspace_folder/.devcontainer/compose.override.yaml"
+            docker compose -f $compose_file -f $override_file rm -f
+
+        case '*'
+            echo "Invalid command: $mode"
+            echo "Available commands: up, build, exec, stop, down"
             return 1
     end
 end
