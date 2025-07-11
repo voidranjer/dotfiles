@@ -1,6 +1,3 @@
-[settings]
-global_tasks = true
-
 [tools]
 uv = "latest"
 python = "3.12"
