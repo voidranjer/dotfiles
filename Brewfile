@@ -12,6 +12,7 @@ brew "fish"       # User-friendly command line shell with autosuggestions and sy
 # brew "starship"   # Cross-shell prompt that's fast, customizable, and shows useful context
 # brew "zellij"     # A terminal workspace and multiplexer, alternative to tmux/screen
 brew "bat"        # A 'cat' clone with syntax highlighting, Git integration, and line numbers
+brew "glow"       # Preview beautiful markdown in the CLI (charmbracelet)
 brew "fd"         # A fast and user-friendly alternative to 'find'
 brew "ripgrep"    # A very fast, recursive, case-sensitive grep utility (often used for code search)
 brew "lsd"        # A modern 'ls' command with colors, icons, and tree view
