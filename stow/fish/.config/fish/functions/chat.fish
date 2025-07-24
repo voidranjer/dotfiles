@@ -1,6 +1,6 @@
 function chat
     set tmp (mktemp)
-    nvim $tmp
+    nvim $tmp +startinsert
 
     # Check if the file is empty
     if test (stat -c %s $tmp) -eq 0
@@ -9,6 +9,7 @@ function chat
     end
 
     cat $tmp | llm -m github_copilot/gpt-4.1 $argv
+    clear
     llm logs -r | glow
     rm $tmp
 end
