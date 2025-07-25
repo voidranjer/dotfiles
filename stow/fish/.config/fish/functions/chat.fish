@@ -3,7 +3,7 @@ function chat
     nvim $tmp +startinsert
 
     # Check if the file is empty
-    if test (stat -c %s $tmp) -eq 0
+    if test (wc -c < $tmp | string trim) -eq 0
         rm $tmp
         return
     end
