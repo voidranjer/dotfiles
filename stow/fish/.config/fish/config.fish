@@ -9,6 +9,11 @@
 # - All functions from ~/.config/fish/functions/ (each in its own .fish file)
 # - All .fish files from ~/.config/fish/conf.d/ (in alphabetical order)
 
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    set -gx EDITOR nvim
+end
+
 # -----------------------------------------------------------------------------
 # 1. Environment Variables (if not suited for conf.d/)
 #    Use 'set -x' for global exports, 'set -g' for global Fish variables.
