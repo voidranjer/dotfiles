@@ -1,6 +1,7 @@
 function chat
-    set model_name "github_copilot/claude-sonnet-4"
+    set model_name github_copilot/claude-sonnet-4
     set should_continue false
+    set system_prompt "Provide short and concise answers unless otherwise specified."
 
     # Check if -c flag is present in argv
     if contains -- -c $argv
@@ -19,9 +20,9 @@ function chat
 
         # Add -c flag to llm call if should_continue is true
         if test $should_continue = true
-            cat $tmp | llm -m $model_name -c
+            cat $tmp | llm -m $model_name -s $system_prompt -c
         else
-            cat $tmp | llm -m $model_name
+            cat $tmp | llm -m $model_name -s $system_prompt
         end
 
         set should_continue true
