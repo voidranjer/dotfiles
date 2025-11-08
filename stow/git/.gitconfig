@@ -48,3 +48,5 @@
     # Set difftastic as the default difftool, so we don't need to specify
     # `-t difftastic` every time.
     tool = difftastic
+[init]
+	defaultBranch = main
