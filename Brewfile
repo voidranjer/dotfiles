@@ -22,6 +22,7 @@ brew "htop"       # An interactive process viewer, alternative to 'top'
 # brew "sad"        # A modern, interactive find-and-replace CLI tool (stream editor alternative)
 # brew "viddy"      # A modern 'watch' command, for running commands periodically and showing output changes
 brew "ranger"     # Visual file manager with Vim-like keybindings and a preview pane
+brew "zoxide"     # A better "cd"
 
 # --- Git & Version Control ---
 brew "git-delta"  # A syntax-highlighting pager for Git, diff, and grep output (highly recommended!)
