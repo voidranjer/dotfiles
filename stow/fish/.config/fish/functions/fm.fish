@@ -5,7 +5,8 @@ function fm
 
     if test -f $tempfile
         if [ (cat $tempfile) != (pwd) ]
-            cd (cat $tempfile)
+            # cd (cat $tempfile)
+            z (cat $tempfile) # assuming "zoxide" is installed
         end
     end
 
