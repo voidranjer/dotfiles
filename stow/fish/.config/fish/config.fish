@@ -12,6 +12,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set -gx EDITOR nvim
+    
+    # Auto-activate venv if present
+    if test -f .venv/bin/activate.fish
+        source .venv/bin/activate.fish
+    end
 end
 
 # -----------------------------------------------------------------------------
